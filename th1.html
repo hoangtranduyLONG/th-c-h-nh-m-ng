@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo và thao tác với mảng</title>
+</head>
+<body>
+<label for="ip">Sample Screen: <br></label>
+<input id="ip" type="text">
+<button onclick="add_element_to_array()">Add</button>
+<button onclick="display_array()">Display</button><br>
+<hr>
+<p id="result"></p>
+<script>
+    let ip = document.getElementById("ip");
+    let arr = Array();
+    let x = 0;
+    function add_element_to_array() {
+        arr[x] = ip.value;
+        alert("Element: " + arr[x] + " Added at index " + x);
+        x += 1;
+        ip.value = "";
+    }
+    function display_array() {
+        let e = "";
+        for (let i = 0; i < arr.length; i++) {
+            e += "Element " + i + " = " + arr[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+</body>
+</html>
